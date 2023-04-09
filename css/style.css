@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.slider-container {
+    margin: 10px auto;
+    width: 800px;
+    height: 600px;
+    position: relative;
+}
+
+.slider-container img {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s;
+    z-index: -1;
+    width: 800px;
+    height: 600px;
+}
+
+.slider-container img.active {
+    opacity: 1;
+}
+
+.slider-container .slide-number {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    z-index: 2;
+    font-size: 15px;
+    padding: 5px 10px;
+    color: white;
+    background-color: dimgray;
+    border-radius: 6px;
+}
+
+.slider-controls {
+    width: 800px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider-controls .prev,
+.slider-controls .next {
+    color: white;
+    background-color: #009688;
+    font-size: 16px;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    width: 20%;
+    padding: 5px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.slider-controls .prev {
+    float: left;
+}
+
+.slider-controls .next {
+    float: right;
+}
+
+.slider-controls .next.disabled,
+.slider-controls .prev.disabled {
+    background-color: rgba(0, 150, 136, 0.5);
+    cursor: no-drop;
+}
+
+.slider-controls .indicators {
+    width: 60%;
+    float: left;
+}
+
+.slider-controls .indicators ul {
+    list-style: none;
+    text-align: center;
+    margin: 0;
+}
+
+.slider-controls .indicators ul li {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background-color: #f6f6f6;
+    color: #333;
+    font-weight: bold;
+    border-radius: 4px;
+    margin: 0 2px;
+    line-height: 28px;
+    cursor: pointer;
+}
+
+.slider-controls .indicators ul li.active {
+    color: #fff;
+    background-color: #009688;
+}
